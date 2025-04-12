@@ -10,9 +10,31 @@
     body {
       font-family: 'Montserrat', sans-serif;
     }
+    .toast {
+      visibility: hidden;
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #4338ca;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      z-index: 50;
+      transition: visibility 0s, opacity 0.3s linear;
+      opacity: 0;
+    }
+    .toast.show {
+      visibility: visible;
+      opacity: 1;
+    }
   </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
+  <div id="toast" class="toast">
+    Obrigado! Sua inscrição foi recebida com sucesso! 🎉
+  </div>
   <!-- Hero -->
   <section class="relative h-screen flex items-center text-white bg-black">
     <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-40">
@@ -101,7 +123,7 @@
     <div class="max-w-2xl mx-auto px-6">
       <h2 class="text-3xl font-bold mb-4">Entre na Caosfera</h2>
       <p class="text-lg mb-8">O futuro começa agora. 🚀</p>
-      <form name="newsletter" method="POST" data-netlify="true" class="flex flex-col sm:flex-row gap-4 justify-center">
+      <form name="newsletter" method="POST" data-netlify="true" class="flex flex-col sm:flex-row gap-4 justify-center" id="newsletter-form">
         <input 
           type="email" 
           name="email" 
@@ -118,5 +140,32 @@
       </form>
     </div>
   </section>
+  <script>
+    const form = document.getElementById('newsletter-form');
+    const toast = document.getElementById('toast');
+
+    function showToast() {
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+        .then(() => {
+          showToast();
+          form.reset();
+        })
+        .catch((error) => console.error(error));
+    });
+  </script>
 </body>
 </html>
