@@ -25,7 +25,7 @@ body {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
-  padding: 1.5rem 3rem;
+  padding: 1.5rem 3rem 1.5rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -50,6 +50,7 @@ header {
   gap: 2rem;
   margin: 2rem 0;
   padding-right: 0;
+  padding-bottom: 3rem;
 }
 
 .text-content {
@@ -111,11 +112,14 @@ header {
 /* Footer */
 footer {
   width: 100%;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1.5rem 0;
+  position: fixed;
+  bottom: 2.5rem;
+  left: 0;
 }
 
 .footer-content {
+  position: relative;
   max-width: 1440px;
   margin: 0 auto;
   width: 100%;
@@ -124,23 +128,32 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 1);
   font-size: 0.75rem;
   letter-spacing: 0.02em;
+}
+
+.footer-content::before {
+  content: '';
+  position: absolute;
+  top: -1.5rem;
+  left: 3rem;
+  right: 3rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .language {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
+  opacity: 1;
 }
 
 .language .globe-icon {
-  opacity: 0.4;
-  font-size: 1em;
-  display: inline-flex;
-  align-items: center;
-  margin-top: 0;
+  width: 16px;
+  height: 16px;
+  opacity: 1;
 }
 
 /* Media Queries */
