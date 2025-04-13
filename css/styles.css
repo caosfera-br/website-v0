@@ -126,9 +126,36 @@ footer {
   gap: 0.5rem;
 }
 
+.language .globe-icon {
+  opacity: 0.7;
+  font-size: 1.1em;
+  margin-top: -1px;
+}
+
+/* Media Queries */
 @media (max-width: 1200px) {
   .container {
-    padding: 1rem;
+    padding: 1.5rem;
+  }
+
+  .main-content {
+    gap: 1.5rem;
+  }
+
+  .text-content {
+    margin-left: 0;
+  }
+
+  .sphere {
+    width: 550px;
+    height: 550px;
+    margin-right: -1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 1.25rem;
   }
 
   .main-content {
@@ -136,21 +163,114 @@ footer {
     text-align: center;
     gap: 2rem;
     padding-right: 0;
+    margin: 1rem 0;
+  }
+
+  .text-content {
+    margin-top: 0;
   }
 
   .text-content h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin: 0 auto 1.5rem;
   }
 
   .text-content h2 {
     max-width: 100%;
-    font-size: 1.25rem;
+    font-size: 1.35rem;
+    margin: 0 auto 2rem;
+  }
+
+  .sphere {
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+  }
+
+  .footer-content {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .logo {
+    height: 24px;
+  }
+
+  .text-content h1 {
+    font-size: 2.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .text-content h2 {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .text-content p {
+    font-size: 0.9rem;
+  }
+
+  .sphere {
+    width: 300px;
+    height: 300px;
+  }
+
+  .footer-content {
+    gap: 1.5rem;
+    font-size: 0.75rem;
+  }
+
+  .language .globe-icon {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 380px) {
+  .text-content h1 {
+    font-size: 2.25rem;
+  }
+
+  .text-content h2 {
+    font-size: 1rem;
+  }
+
+  .sphere {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* Handle tall mobile screens */
+@media (max-height: 700px) and (max-width: 900px) {
+  .main-content {
+    margin: 0.5rem 0;
+  }
+
+  .text-content h1 {
+    font-size: 3rem;
   }
 
   .sphere {
     width: 350px;
     height: 350px;
-    margin-right: 0;
+  }
+}
+
+/* Prevent super-wide screens from stretching too much */
+@media (min-width: 1800px) {
+  .container {
+    max-width: 1600px;
+  }
+
+  .sphere {
+    width: 700px;
+    height: 700px;
   }
 }
