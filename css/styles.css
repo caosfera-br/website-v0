@@ -20,7 +20,7 @@ body {
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 2rem 4rem;
+  padding: 1.75rem 4rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@ body {
 
 /* Header */
 header {
-  padding: 1rem 0;
+  padding: 0.75rem 0;
 }
 
 .logo {
@@ -43,18 +43,19 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 4rem;
-  margin: 3rem 0;
+  margin: 2.5rem 0;
 }
 
 .text-content {
   max-width: 600px;
+  margin-top: -1rem;
 }
 
 .text-content h1 {
   font-size: 4.5rem;
   font-weight: 700;
   line-height: 1;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
   letter-spacing: -0.02em;
   white-space: nowrap;
 }
@@ -63,7 +64,7 @@ header {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.4;
-  margin-bottom: 3rem;
+  margin-bottom: 2.75rem;
   color: rgba(255, 255, 255, 0.9);
   max-width: 550px;
 }
@@ -99,7 +100,7 @@ header {
 /* Footer */
 footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.5rem 0;
+  padding: 1.25rem 0;
   margin-top: auto;
 }
 
