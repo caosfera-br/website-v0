@@ -7,7 +7,7 @@
 }
 
 html, body {
-  min-height: 100%;
+  height: 100%;
   overflow-x: hidden;
 }
 
@@ -15,20 +15,22 @@ body {
   font-family: 'Space Grotesk', sans-serif;
   background: #000;
   color: #fff;
+  position: relative;
 }
 
 .container {
   max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
-  padding: 1.75rem 4rem;
-  min-height: 100vh;
+  padding: 1.5rem 3rem;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 /* Header */
 header {
-  padding: 0.75rem 0;
+  padding: 0.5rem 0;
 }
 
 .logo {
@@ -42,20 +44,23 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 4rem;
-  margin: 2.5rem 0;
+  gap: 2rem;
+  margin: 2rem 0;
+  padding-right: 0;
 }
 
 .text-content {
+  flex-shrink: 0;
   max-width: 600px;
   margin-top: -1rem;
+  margin-left: -1rem;
 }
 
 .text-content h1 {
   font-size: 4.5rem;
   font-weight: 700;
   line-height: 1;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
   white-space: nowrap;
 }
@@ -64,7 +69,7 @@ header {
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.4;
-  margin-bottom: 2.75rem;
+  margin-bottom: 2.5rem;
   color: rgba(255, 255, 255, 0.9);
   max-width: 550px;
 }
@@ -82,7 +87,9 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: -2rem;
+  margin-right: -3rem;
+  flex-shrink: 0;
+  transform: none;
 }
 
 .sphere img {
@@ -100,7 +107,7 @@ header {
 /* Footer */
 footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.25rem 0;
+  padding: 1rem 0;
   margin-top: auto;
 }
 
@@ -119,23 +126,21 @@ footer {
   gap: 0.5rem;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .container {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 
   .main-content {
     flex-direction: column;
     text-align: center;
-    gap: 3rem;
-  }
-
-  .text-content {
-    max-width: 100%;
+    gap: 2rem;
+    padding-right: 0;
   }
 
   .text-content h1 {
     font-size: 3rem;
+    margin: 0 auto 1.5rem;
   }
 
   .text-content h2 {
@@ -146,5 +151,6 @@ footer {
   .sphere {
     width: 350px;
     height: 350px;
+    margin-right: 0;
   }
 }
