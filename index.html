@@ -27,7 +27,7 @@
             </div>
           </form>
         </div>
-        <div id="success-message" class="hidden">
+        <div id="success-message" style="display: none;">
           <p>Agradecemos seu contato e logo em seguida nossa equipe vai lhe responder</p>
         </div>
       </div>
@@ -56,13 +56,11 @@
         body: new URLSearchParams(formData).toString(),
       })
         .then(() => {
-          form.reset();
-          document.getElementById('form-section').classList.add('hidden');
+          const formSection = document.getElementById('form-section');
           const successMessage = document.getElementById('success-message');
-          successMessage.classList.remove('hidden');
-          setTimeout(() => {
-            successMessage.classList.add('visible');
-          }, 50);
+          
+          formSection.style.display = 'none';
+          successMessage.style.display = 'block';
         })
         .catch((error) => console.log(error));
     };
