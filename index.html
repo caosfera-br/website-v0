@@ -16,15 +16,20 @@
       <div class="text-content">
         <h1>Você chegou à Caosfera</h1>
         <h2>Um ecossistema Human-Centric onde Caos vira consciência, e ser humano em movimento é o centro da própria criação.</h2>
-        <h3>Sentiu o chamado?</h3>
-        <p>Deixe seu e-mail e receba os sinais da Caosfera.</p>
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form-group">
-          <p class="hidden">
-            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-          </p>
-          <input type="email" name="email" placeholder="Escreva aqui seu melhor e-mail" class="email-input" required>
-          <button type="submit" class="cta-button">Ativar o chamado</button>
-        </form>
+        <div id="form-section">
+          <h3>Sentiu o chamado?</h3>
+          <p>Deixe seu e-mail e receba os sinais da Caosfera.</p>
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form-group">
+            <p class="hidden">
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+            <input type="email" name="email" placeholder="Escreva aqui seu melhor e-mail" class="email-input" required>
+            <button type="submit" class="cta-button">Ativar o chamado</button>
+          </form>
+        </div>
+        <div id="success-message" class="hidden">
+          <p>Agradecemos seu contato e logo em seguida nossa equipe vai lhe responder</p>
+        </div>
       </div>
 
       <div class="sphere">
@@ -52,5 +57,28 @@
       </div>
     </footer>
   </div>
+
+  <script>
+    document.querySelector('form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const form = e.target;
+      const formData = new FormData(form);
+      
+      try {
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        });
+        
+        // Hide form section and show success message
+        document.getElementById('form-section').style.display = 'none';
+        document.getElementById('success-message').style.display = 'block';
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    });
+  </script>
 </body>
 </html>
