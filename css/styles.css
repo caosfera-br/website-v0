@@ -1,5 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
 
+/* Font declarations */
+@font-face {
+  font-family: 'Forma DJR';
+  src: url('../fonts/Forma-DJR/forma-djr.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Campton';
+  src: url('../fonts/Campton/Campton.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Forma DJR Micro';
+  src: url('../fonts/Forma-DJR-Micro/FormaDJRMicro-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Forma DJR Micro';
+  src: url('../fonts/Forma-DJR-Micro/FormaDJRMicro-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Forma DJR Micro';
+  src: url('../fonts/Forma-DJR-Micro/FormaDJRMicro-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Campton';
+  src: url('../fonts/Campton/Campton-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Campton';
+  src: url('../fonts/Campton/Campton-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -61,9 +118,9 @@ header {
 }
 
 .text-content h1 {
-  font-family: 'Forma DJR Micro', sans-serif;
+  font-family: 'Forma DJR', sans-serif;
   font-size: 4.5rem;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1;
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
@@ -91,6 +148,10 @@ header {
   color: rgba(255, 255, 255, 0.5);
   font-weight: 400;
   margin-bottom: 2rem;
+}
+
+.hidden {
+  display: none;
 }
 
 .form-group {
@@ -163,7 +224,8 @@ header {
 }
 
 /* Footer */
-footer {
+.footer-old {
+  display: none; /* Hide the old footer for future use */
   width: 100%;
   padding: 1.5rem 0;
   position: fixed;
@@ -171,7 +233,7 @@ footer {
   left: 0;
 }
 
-.footer-content {
+.footer-old .footer-content {
   position: relative;
   max-width: 1440px;
   margin: 0 auto;
@@ -186,7 +248,7 @@ footer {
   letter-spacing: 0.02em;
 }
 
-.footer-content::before {
+.footer-old .footer-content::before {
   content: '';
   position: absolute;
   top: -1.5rem;
@@ -196,16 +258,43 @@ footer {
   background: rgba(255, 255, 255, 0.1);
 }
 
-.language {
+/* New Footer */
+.footer-new {
+  width: 100%;
+  position: fixed;
+  bottom: 2rem;
+  left: 0;
+  padding: 0 3rem;
+}
+
+.footer-new .footer-content {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-new .language {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  opacity: 1;
+  opacity: 0.9;
 }
 
-.language .globe-icon {
+.footer-new .globe-icon {
   width: 16px;
   height: 16px;
+  opacity: 0.9;
+}
+
+.footer-new .copyright {
+  color: rgba(255, 255, 255, 1);
   opacity: 1;
 }
 
@@ -299,7 +388,7 @@ footer {
     height: 300px;
   }
 
-  .footer-content {
+  .footer-new .footer-content {
     gap: 1.5rem;
     font-size: 0.75rem;
   }
