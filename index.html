@@ -19,13 +19,12 @@
         <div id="form-section">
           <h3>Sentiu o chamado?</h3>
           <p>Deixe seu e-mail e receba os sinais da Caosfera.</p>
-          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form-group">
+          <form name="contact" netlify>
             <input type="hidden" name="form-name" value="contact" />
-            <p class="hidden">
-              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-            </p>
-            <input type="email" name="email" placeholder="Escreva aqui seu melhor e-mail" class="email-input" required>
-            <button type="submit" class="cta-button">Ativar o chamado</button>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Escreva aqui seu melhor e-mail" class="email-input" required>
+              <button type="submit" class="cta-button">Ativar o chamado</button>
+            </div>
           </form>
         </div>
         <div id="success-message" class="hidden">
@@ -38,22 +37,8 @@
       </div>
     </main>
 
-    <footer class="footer-old">
-      <div class="footer-content">
-        <div class="language">
-          <img src="img/globe-icon.svg" alt="" class="globe-icon" />
-          ENGLISH
-        </div>
-        <div class="copyright">© 2025 Caosfera</div>
-      </div>
-    </footer>
-
     <footer class="footer-new">
       <div class="footer-content">
-        <div class="language">
-          <img src="img/globe-icon.svg" alt="" class="globe-icon" />
-          ENGLISH
-        </div>
         <div class="copyright">© 2025 Caosfera</div>
       </div>
     </footer>
@@ -61,24 +46,23 @@
 
   <script>
     const form = document.querySelector('form');
+    const formSection = document.getElementById('form-section');
+    const successMessage = document.getElementById('success-message');
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       
       try {
         const formData = new FormData(form);
         
-        const response = await fetch('/', {
+        await fetch('/', {
           method: 'POST',
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-          },
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: new URLSearchParams(formData).toString()
         });
-
-        if (response.ok) {
-          document.getElementById('form-section').style.display = 'none';
-          document.getElementById('success-message').style.display = 'block';
-        }
+        
+        formSection.style.display = 'none';
+        successMessage.style.display = 'block';
       } catch (error) {
         console.error('Error:', error);
       }

@@ -284,23 +284,13 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
   color: rgba(255, 255, 255, 0.9);
   font-size: 0.75rem;
   letter-spacing: 0.02em;
 }
 
 .footer-new .language {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  opacity: 0.9;
-}
-
-.footer-new .globe-icon {
-  width: 16px;
-  height: 16px;
-  opacity: 0.9;
+  display: none;
 }
 
 .footer-new .copyright {
