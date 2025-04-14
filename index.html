@@ -59,22 +59,25 @@
   </div>
 
   <script>
-    document.querySelector('form').addEventListener('submit', async (e) => {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       
-      const form = e.target;
-      const formData = new FormData(form);
-      
       try {
+        const formData = new FormData(form);
+        
         await fetch('/', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData).toString()
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: new URLSearchParams(formData).toString() + '&form-name=' + form.getAttribute('name'),
         });
         
         // Hide form section and show success message
         document.getElementById('form-section').style.display = 'none';
         document.getElementById('success-message').style.display = 'block';
+        
       } catch (error) {
         console.error('Error:', error);
       }
