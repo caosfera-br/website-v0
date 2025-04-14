@@ -19,7 +19,7 @@
         <div id="form-section">
           <h3>Sentiu o chamado?</h3>
           <p>Deixe seu e-mail e receba os sinais da Caosfera.</p>
-          <form name="contact" netlify>
+          <form name="contact" method="POST" action="/" data-netlify="true" class="form-group">
             <input type="hidden" name="form-name" value="contact" />
             <div class="form-group">
               <input type="email" name="email" placeholder="Escreva aqui seu melhor e-mail" class="email-input" required>
@@ -45,28 +45,24 @@
   </div>
 
   <script>
-    const form = document.querySelector('form');
-    const formSection = document.getElementById('form-section');
-    const successMessage = document.getElementById('success-message');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      const form = event.target;
+      const formData = new FormData(form);
       
-      try {
-        const formData = new FormData(form);
-        
-        await fetch('/', {
-          method: 'POST',
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams(formData).toString()
-        });
-        
-        formSection.style.display = 'none';
-        successMessage.style.display = 'block';
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    });
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      })
+        .then(() => {
+          document.getElementById('form-section').style.display = 'none';
+          document.getElementById('success-message').style.display = 'block';
+        })
+        .catch((error) => console.log(error));
+    };
+
+    document.querySelector("form").addEventListener("submit", handleSubmit);
   </script>
 </body>
 </html>
