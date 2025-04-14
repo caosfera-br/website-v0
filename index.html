@@ -19,7 +19,7 @@
         <div id="form-section">
           <h3>Sentiu o chamado?</h3>
           <p>Deixe seu e-mail e receba os sinais da Caosfera.</p>
-          <form name="contact" method="POST" action="/" data-netlify="true" class="form-group">
+          <form name="contact" method="POST" action="/" data-netlify="true">
             <input type="hidden" name="form-name" value="contact" />
             <div class="form-group">
               <input type="email" name="email" placeholder="Escreva aqui seu melhor e-mail" class="email-input" required>
@@ -58,8 +58,9 @@
         .then(() => {
           form.reset();
           document.getElementById('form-section').style.display = 'none';
-          document.getElementById('success-message').style.display = 'block';
-          document.getElementById('success-message').style.opacity = '1';
+          const successMessage = document.getElementById('success-message');
+          successMessage.classList.remove('hidden');
+          successMessage.style.opacity = '1';
         })
         .catch((error) => console.log(error));
     };

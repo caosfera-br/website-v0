@@ -150,9 +150,13 @@ header {
   margin-bottom: 2rem;
 }
 
+#form-section {
+  transition: opacity 0.3s ease-out;
+}
+
 #success-message {
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in;
 }
 
 #success-message p {
@@ -162,7 +166,7 @@ header {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .form-group {
