@@ -20,6 +20,7 @@
           <h3>Sentiu o chamado?</h3>
           <p>Deixe seu e-mail e receba os sinais da Caosfera.</p>
           <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form-group">
+            <input type="hidden" name="form-name" value="contact" />
             <p class="hidden">
               <label>Don't fill this out if you're human: <input name="bot-field" /></label>
             </p>
@@ -66,18 +67,19 @@
       try {
         const formData = new FormData(form);
         
-        await fetch('/', {
+        const response = await fetch('/', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
+            "Content-Type": "application/x-www-form-urlencoded"
           },
-          body: new URLSearchParams(formData).toString() + '&form-name=' + form.getAttribute('name'),
+          body: new URLSearchParams(formData).toString()
         });
-        
-        // Hide form section and show success message
-        document.getElementById('form-section').style.display = 'none';
-        document.getElementById('success-message').style.display = 'block';
-        
+
+        if (response.ok) {
+          // Hide form section and show success message
+          document.getElementById('form-section').style.display = 'none';
+          document.getElementById('success-message').style.display = 'block';
+        }
       } catch (error) {
         console.error('Error:', error);
       }
