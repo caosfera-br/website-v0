@@ -57,10 +57,12 @@
       })
         .then(() => {
           form.reset();
-          document.getElementById('form-section').style.display = 'none';
+          document.getElementById('form-section').classList.add('hidden');
           const successMessage = document.getElementById('success-message');
           successMessage.classList.remove('hidden');
-          successMessage.style.opacity = '1';
+          setTimeout(() => {
+            successMessage.classList.add('visible');
+          }, 50);
         })
         .catch((error) => console.log(error));
     };

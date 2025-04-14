@@ -151,12 +151,25 @@ header {
 }
 
 #form-section {
-  transition: opacity 0.3s ease-out;
+  opacity: 1;
+  transition: all 0.3s ease-out;
+}
+
+#form-section.hidden {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
 #success-message {
   opacity: 0;
   transition: opacity 0.3s ease-in;
+  margin-top: 0;
+}
+
+#success-message.visible {
+  opacity: 1;
 }
 
 #success-message p {
