@@ -27,7 +27,8 @@
             </div>
           </form>
         </div>
-        <div id="success-message" style="display: none;">
+        <div id="success-message">
+          <h3>Obrigado!</h3>
           <p>Agradecemos seu contato e logo em seguida nossa equipe vai lhe responder</p>
         </div>
       </div>
@@ -55,14 +56,24 @@
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString(),
       })
-        .then(() => {
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
           const formSection = document.getElementById('form-section');
           const successMessage = document.getElementById('success-message');
           
+          // Hide form and show success message
           formSection.style.display = 'none';
           successMessage.style.display = 'block';
+          
+          // Reset the form
+          form.reset();
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          console.error('Error:', error);
+          alert('Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.');
+        });
     };
 
     document.querySelector("form").addEventListener("submit", handleSubmit);
