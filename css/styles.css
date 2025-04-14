@@ -79,10 +79,63 @@ header {
   max-width: 550px;
 }
 
+.text-content h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 1);
+}
+
 .text-content p {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: flex;
+  gap: 1rem;
+  max-width: 100%;
+}
+
+.email-input {
+  flex: 1;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  padding: 1rem 1.5rem;
+  color: white;
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.email-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.email-input:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.cta-button {
+  background: #FF00C7;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  padding: 1rem 2rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.cta-button:hover {
+  background: #ff1ace;
 }
 
 /* Sphere */
@@ -253,6 +306,15 @@ footer {
 
   .language .globe-icon {
     font-size: 1em;
+  }
+
+  .form-group {
+    flex-direction: column;
+  }
+  
+  .email-input,
+  .cta-button {
+    width: 100%;
   }
 }
 
