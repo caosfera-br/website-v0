@@ -56,8 +56,10 @@
         body: new URLSearchParams(formData).toString(),
       })
         .then(() => {
+          form.reset();
           document.getElementById('form-section').style.display = 'none';
           document.getElementById('success-message').style.display = 'block';
+          document.getElementById('success-message').style.opacity = '1';
         })
         .catch((error) => console.log(error));
     };
