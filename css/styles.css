@@ -156,24 +156,12 @@ header {
 
 #success-message {
   display: none;
-  margin-top: 2rem;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-}
-
-#success-message h3 {
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
 }
 
 #success-message p {
   color: rgba(255, 255, 255, 0.9);
   font-size: 1rem;
   line-height: 1.4;
-  margin-bottom: 0;
 }
 
 .hidden {
