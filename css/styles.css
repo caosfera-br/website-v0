@@ -94,6 +94,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 /* Header */
@@ -112,8 +113,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
-  margin: 2rem 0;
+  gap: 4rem;
+  margin: -4rem 0;
   padding-right: 0;
   padding-bottom: 3rem;
 }
@@ -122,7 +123,7 @@ header {
   flex-shrink: 0;
   max-width: 600px;
   margin-top: -1rem;
-  margin-left: -1rem;
+  padding: 1.5rem;  
 }
 
 .text-content h1 {
@@ -182,7 +183,7 @@ header {
 .email-input {
   flex: 1;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 4px solid rgba(255, 255, 255, 0.1);
   border-radius: 100px;
   padding: 1rem 1.5rem;
   color: white;
