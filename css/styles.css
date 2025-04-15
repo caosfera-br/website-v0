@@ -344,12 +344,28 @@ header {
   .text-content h1 {
     font-size: 3.5rem;
     margin: 0 auto 1.5rem;
+    white-space: normal;
   }
 
   .text-content h2 {
     max-width: 100%;
     font-size: 1.35rem;
     margin: 0 auto 2rem;
+  }
+
+  .text-content h3 {
+    font-size: 2rem;
+  }
+
+  .text-content p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  #success-message p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.5);
   }
 
   .sphere {
@@ -386,6 +402,11 @@ header {
 
   .text-content p {
     font-size: 0.9rem;
+  }
+
+  #success-message p {
+    font-size: 0.9rem;
+    text-align: center;
   }
 
   .sphere {
