@@ -3,31 +3,15 @@
 /* Font declarations */
 @font-face {
   font-family: 'Forma DJR';
-  src: url('../fonts/Forma-DJR/forma-djr.woff2') format('woff2');
+  src: url('../fonts/Fonte forma-djr/FormaDJRDisplay-Regular-Testing.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Campton';
-  src: url('../fonts/Campton/Campton.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Forma DJR Micro';
-  src: url('../fonts/Forma-DJR-Micro/FormaDJRMicro-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Forma DJR Micro';
-  src: url('../fonts/Forma-DJR-Micro/FormaDJRMicro-Medium.woff2') format('woff2');
+  font-family: 'Forma DJR';
+  src: url('../fonts/Fonte forma-djr/FormaDJRDisplay-Medium-Testing.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -35,7 +19,23 @@
 
 @font-face {
   font-family: 'Forma DJR Micro';
-  src: url('../fonts/Forma-DJR-Micro/FormaDJRMicro-Bold.woff2') format('woff2');
+  src: url('../fonts/Fonte forma-djr/FormaDJRMicro-Regular-Testing.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Forma DJR Micro';
+  src: url('../fonts/Fonte forma-djr/FormaDJRMicro-Medium-Testing.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Forma DJR Micro';
+  src: url('../fonts/Fonte forma-djr/FormaDJRMicro-Bold-Testing.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -43,7 +43,15 @@
 
 @font-face {
   font-family: 'Campton';
-  src: url('../fonts/Campton/Campton-Medium.woff2') format('woff2');
+  src: url('../fonts/Campton/CamptonBook.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Campton';
+  src: url('../fonts/Campton/CamptonMedium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -51,7 +59,7 @@
 
 @font-face {
   font-family: 'Campton';
-  src: url('../fonts/Campton/Campton-Bold.woff2') format('woff2');
+  src: url('../fonts/Campton/CamptonBold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -128,6 +136,7 @@ header {
 }
 
 .text-content h2 {
+  font-family: 'Forma DJR Micro', sans-serif;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.4;
@@ -137,13 +146,15 @@ header {
 }
 
 .text-content h3 {
+  font-family: 'Forma DJR Micro', sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
   color: rgba(255, 255, 255, 1);
 }
 
-.text-content p {
+.text-content p, #success-message p {
+  font-family: 'Forma DJR Micro', sans-serif;
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 400;
@@ -156,13 +167,6 @@ header {
 
 #success-message {
   display: none;
-}
-
-#success-message p {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 1rem;
-  font-weight: 400;
-  margin-bottom: 2rem;
 }
 
 .hidden {
@@ -182,7 +186,7 @@ header {
   border-radius: 100px;
   padding: 1rem 1.5rem;
   color: white;
-  font-family: inherit;
+  font-family: 'Forma DJR Micro', sans-serif;
   font-size: 1rem;
   outline: none;
   transition: border-color 0.2s;
@@ -202,7 +206,7 @@ header {
   border: none;
   border-radius: 100px;
   padding: 1rem 2rem;
-  font-family: inherit;
+  font-family: 'Forma DJR Micro', sans-serif;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
