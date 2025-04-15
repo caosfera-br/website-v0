@@ -152,11 +152,16 @@ header {
 
 #form-section {
   display: block;
+  min-height: 160px; /* Reserve space for both states */
+  position: relative;
 }
 
 #success-message {
   display: none;
-  margin-top: -2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 #success-message p {
