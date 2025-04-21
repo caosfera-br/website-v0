@@ -35,13 +35,13 @@
                 <label>Don't fill this out if you're human: <input name="bot-field" /></label>
               </p>-->
               <div class="form-group">
-                <input type="email" name="email" placeholder="Escreva aqui seu melhor e-mail" class="email-input" required>
-                <button type="submit" class="cta-button">Ativar o chamado</button>
+                <input type="email" name="email" placeholder="Escreva aqui seu melhor e-mail" class="email-input" required id="recipientEmail">
+                <button type="submit" class="cta-button" id="send-email-button">Ativar o chamado</button>
               </div>
             </form>
           </div>
           <div id="success-message">
-            <p style="color: #9FFB03; font-size: 18px;"> Agradecemos seu contato e logo em seguida nossa equipe vai lhe responder</p>
+            <p style="color: #9FFB03; font-size: 18px;"> ✦ Chamado ativado. <br> A conexão foi feita e a nossa viagem já começou.</p>
           </div>
         </div>
 
@@ -56,5 +56,36 @@
         </div>
       </footer>
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      const sendEmailButton = document.getElementById('send-email-button');
+      const recipientEmailInput = document.getElementById('recipientEmail');
+
+      sendEmailButton.addEventListener('click', function() {
+      const destinatario = recipientEmailInput.value;
+      const assunto = encodeURIComponent('Prazer, Caos');
+      const corpo = encodeURIComponent(`Prazer, Caos!
+
+      Ao clicar em “Ativar chamado”, você abriu um portal. 
+      Agora, você faz parte do campo da Caosfera — uma tribo que pratica, ressignifica e encarna novos arquétipos e símbolos da expressão humana.
+
+      🌪 Aqui, Caos é linguagem. É caminho.  
+      É a consciência viva de uma nova era para empresas e pessoas, onde o ser humano em movimento é o centro da própria criação:  
+      um ser mutante, caótico e flexível, que se adapta, cocria e flui com o inesperado.
+
+      Por isso, respire. A viagem já começou.
+
+      Se você sente o desejo de cocriar com a Caosfera, responda a este e-mail e nos conte. E se ainda não sabe como podemos voar juntos, mas tem curiosidade, nos pergunte!  
+
+      Afinal, você não chegou até aqui à toa. E isso muda tudo.
+
+      Com carinho,  
+      Caosfera`);
+
+      window.location.href = `mailto:${destinatario}?subject=${assunto}&body=${corpo}`;
+    });
+  });
+  </script>
   </body>
   </html>
